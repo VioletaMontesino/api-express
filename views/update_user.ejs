@@ -1,0 +1,127 @@
+<!-- Importamos el header -->
+<%- include('include/_header') %>
+
+<div id="site-main">
+  <div class="container">
+    <div class="box-nav d-flex-justify-between">
+      <div class="box-nav d-flex-justify-between title">
+        <h3><a href="/" class="border-shadow">Lista Usuarios</a></h3>
+      </div>
+    </div>
+
+    <div class="forms">
+      <div class="form-title text-center">
+        <h2>Editar Usuario</h2>
+      </div>
+  
+      <form class="needs-validation" nonvalidate method="POST" id="update_user">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Nombre</label>
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <input type="text" class="form-control" id="validationCustom01" name="Nombre" minLength="3" value="<%= user.Nombre%>" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]*" placeholder="<%= user._id%>"
+              required>
+            <div class="invalid-feedback">
+              El nombre es requerido. Mínimo 3 carácteres no numéricos
+            </div>
+          </div>
+          <div class="col-md-8 mb-3">
+            <label for="validationCustom02">Apellidos</label>
+            <input type="text" class="form-control" id="validationCustom02" name="Apellidos" minLength="3" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]*" placeholder="Apellidos" value="<%= user.Apellidos%>"
+              required>
+            <div class="invalid-feedback">
+              El apellido es requerido. Mínimo 3 carácteres no numéricos
+            </div>
+          </div>
+        </div>
+          <div class="form-row">
+            <div class="col-md-4 mb-12">
+              <label for="validationCustomUsername">Edad</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="validationCustom03" name="Edad" placeholder="Edad"
+                value="<%= user.Edad%>" aria-describedby="inputGroupPrepend" min="0" max="125" required>
+                <div class="invalid-feedback">
+                  La edad tiene que estar comprendida entre 0 y 125
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 mb-12">
+              <label for="validationCustom03">DNI</label>
+              <input type="text" class="form-control" id="validationCustom04" name="Dni" placeholder="012345678A" pattern="[0-9]{8}[A-Za-z]{1}" value="<%= user.Dni%>"
+                minlength="9" maxlength="9" required>
+              <div class="invalid-feedback">
+                El DNI debe tener 9 caracteres, incluida la letra
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4 mb-12">
+              <label for="validationCustom04">Cumpleaños</label>
+              <input type="text" class="form-control" id="validationCustom05" name="Cumpleanos" value="<%= user.Cumpleanos%>" pattern="(?:19|20)(?:(?:[13579][26]|[02468][048])-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))|(?:[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:29|30))|(?:(?:0[13578]|1[02])-31)))"
+                placeholder="AAAA-MM-DD" required>
+              <div class="invalid-feedback">
+                Formato requerido AAAA-MM-DD
+              </div>
+            </div>
+            <div class="col-md-4 mb-12">
+              <label for="validationCustom05">Color</label>
+              <input type="text" class="form-control" id="validationCustom06" name="ColorFav" value="<%= user.ColorFav%>" minlength="3"
+                placeholder="Color Favorito" required>
+              <div class="invalid-feedback">
+                Más de 3 caracteres no numéricos
+              </div>
+            </div>
+            <div class="col-md-4 mb-12">
+              <label for="sexo" class="control-label">Sexo</label>
+              <select class="form-control" id="sexo" name="Sexo" value="<%= user.Sexo%>">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+                <option value="Otro">Otro</option>
+                <option value="No especificado">No especificado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Acepto los terminos y condiciones
+              </label>
+              <div class="invalid-feedback">
+                Tiene que aceptar los terminos antes de enviar el formulario
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Actualizar</button>  
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Importamos el footer -->
+  <%- include('include/_footer') %>
+
+
+  <script>
+    // Validación de campos
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Usamos la validación de Bootstrap
+        var forms = document.getElementsByClassName('needs-validation');
+        // Impedimos que se envíe el formulario hasta que todo esté validado
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');  
+          }, false);
+        });
+      }, false);
+    })();
+    </script>

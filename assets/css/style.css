@@ -1,0 +1,106 @@
+:root {
+    --yellow: #d8c72f;
+    --blue: #8eb2e7;
+    --violet: #78288c67;
+    --big: 32;
+    --medium: 28;
+    --nomral: 24px;
+}
+
+form{
+    margin-top: 20px;
+}
+
+h2{
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.valid-feedback{
+    font-weight: bold;
+}
+.form-title {
+    margin-bottom: 20px;
+}
+
+.icon{
+    border: 2px solid var(--violet);
+    border-radius: 4px;
+    padding: 7px 8px;
+}
+.icon:hover{
+    background-color: var(--blue) !important;
+}
+
+.userRow{
+    background-color: var(--violet);
+}
+
+.userRow:hover {
+
+    opacity: .8;
+    color: var(--blue);
+    filter: sepia(0.2);
+}
+.forms {
+    max-width: 600px;
+    margin: 50px auto;
+ 
+}
+
+.form-row {
+    background-color: var(--violet);
+    padding-bottom: 10px;
+    padding: 10px 10px 20px 10px;
+    margin-bottom: 2px;
+}
+
+.form-control{
+    border: 2px ridge var(--violet) !important;
+    border-radius: 5px;
+}
+
+.title {
+    text-align: center;
+    margin: 20px;
+    padding: 10px 14px 10px ;
+    width: 300px;
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+}
+
+.title:hover {
+    background-color: var(--violet);
+    opacity: .8;
+    filter: sepia(0.2);
+    border: 7px ridge var(--violet);
+    padding: 5px 10px;
+}
+
+a{
+    color: var(--blue);
+}
+a:hover {
+    text-decoration: none !important;
+    color: var(--blue) !important;
+}
+
+@media only screen and (max-width: 1024px){
+    table, thead, tbody, th, td, tr{
+        display: block;
+    }
+
+    thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid var(--border);}
+
+    td{
+        border: none;
+        position: relative;
+    }
+
+}

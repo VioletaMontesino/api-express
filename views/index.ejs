@@ -1,0 +1,47 @@
+
+
+
+<!-- Importamos el header -->
+  <%- include('include/_header') %>
+  
+
+<div id="site-main">
+  <div class="container">
+    <div class="box-nav d-flex-justify-between title">
+      <h3><a href="/add-user" class="border-shadow">Añadir usuario</a></h3>
+    </div>
+
+    <form action="/" method="POST">
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Dni</th>
+            <th scope="col">Cumpleaños</th>
+            <th scope="col">Color</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- include('include/_list') %>
+        <tbody>       
+  
+      </table>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+<!-- Importamos el footer -->
+  <%- include('include/_footer') %>
+    
+
+  

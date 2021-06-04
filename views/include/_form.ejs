@@ -1,0 +1,78 @@
+<form class="needs-validation forms" novalidate method="post" action="/update-user">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Nombre</label>
+        <input type="text" class="form-control" id="validationCustom01" name="Nombre" placeholder="Nombre" required minlength="3">
+        <div class="valid-feedback">
+          El nombre tiene que tener mínimo 3 caracteres no numéricos
+        </div>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label for="validationCustom02">Apellidos</label>
+        <input type="text" class="form-control" id="validationCustom02" name="Apellidos" placeholder="Apellidos" required>
+        <div class="valid-feedback">
+          El apellido es requerido
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCustomUsername">Edad</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="validationCustomUsername" name="Edad" placeholder="Edad" value="0" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            La edad tiene que estar comprendida entre 0 y 125
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label for="validationCustom03">DNI</label>
+        <input type="text" class="form-control" id="validationCustom03" name="DNI" placeholder="012345678A" minlength="9" maxlength="9" required>
+        <div class="invalid-feedback">
+          El DNI debe tener 9 caracteres
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="form-row">
+     
+      <div class="col-md-5 mb-3">
+        <label for="validationCustom04">Cumpleaños</label>
+        <input type="text" class="form-control" id="validationCustom04" name="Cumpleanos" placeholder="AAAA-MM-DD" required>
+        <div class="invalid-feedback">
+          Formato requerido AAAA-MM-DD
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom05">Color</label>
+        <input type="text" class="form-control" id="validationCustom05" name="ColorFav" placeholder="Color Favorito" required>
+        <div class="invalid-feedback">
+          Más de 3 caracteres no numéricos
+        </div>
+      </div>
+      <div class="form-group col-md-6 mb-3"> <!-- State Button -->
+        <label for="sexo" class="control-label">Sexo</label>
+        <select class="form-control" id="sexo" name="Sexo">
+            <option value="HO">Hombre</option>
+            <option value="MU">Mujer</option>
+            <option value="OT">Otro</option>
+            <option value="ND">No definido</option>                
+        </select>                    
+    </div>
+    </div>
+  
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Acepto los terminos y condiciones
+        </label>
+        <div class="invalid-feedback">
+          Tiene que aceptar los terminos antes de enviar el formulario
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </form>
+
+ 

@@ -1,0 +1,19 @@
+<% for(var i = 0; i < users.length; i ++) {%>
+  <tr class="userRow">
+    <td><%= users[i].Nombre %></td>
+    <td><%= users[i].Apellidos %></td>
+    <td><%= users[i].Edad %></td>
+    <td><%= users[i].Dni %></td>
+    <td><%= users[i].Cumpleanos %></td>
+    <td><%= users[i].ColorFav %></td>
+    <td><%= users[i].Sexo %></td>
+    <td>
+      <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
+          <span class="text-gradient icon"><i class="fas fa-pencil-alt"></i></span>
+      </a>
+    </td>
+    <td>
+      <button type="button" class="btn btn-outline-danger" onclick="userDelete(`<%= users[i]._id %>`)">X</button>
+    </td>
+  </tr> 
+<% }%>
